@@ -224,7 +224,7 @@ export default function App() {
           flex-direction: column;
           justify-content: space-between;
           position: relative;
-          min-height: 540px;
+          min-height: 460px;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -234,7 +234,7 @@ export default function App() {
         }
 
         .card-content {
-          padding: 32px 28px 24px;
+          padding: 24px 24px 18px;
           flex-grow: 1;
         }
 
@@ -246,7 +246,7 @@ export default function App() {
         .card-content-check-email {
           position: relative;
           z-index: 2;
-          height: 100%;
+          flex-grow: 1;
           display: flex;
           flex-direction: column;
         }
@@ -256,7 +256,7 @@ export default function App() {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 120px;
+          height: 90px;
           pointer-events: none;
           z-index: 1;
         }
@@ -284,12 +284,12 @@ export default function App() {
 
         /* ================= ILLUSTRATIONS ================= */
         .illustration {
-          height: 140px;
+          height: 110px;
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
         }
 
         .illustration-svg {
@@ -298,22 +298,86 @@ export default function App() {
           max-width: 180px;
         }
 
+        .illustration-img {
+          position: relative;
+          z-index: 1;
+          max-height: 100px;
+          max-width: 100%;
+          object-fit: contain;
+          mix-blend-mode: multiply;
+          transition: transform 0.3s ease;
+        }
+
+        .card:hover .illustration-img {
+          transform: scale(1.05);
+        }
+
+        .illustration-glow-outer {
+          position: absolute;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background: #f5f3ff;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        .illustration-glow-inner {
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: #ede9fe;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        .question-badge {
+          position: absolute;
+          top: 0px;
+          right: calc(50% - 55px);
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background: #6366f1;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Outfit', sans-serif;
+          font-size: 16px;
+          font-weight: 700;
+          box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4);
+          user-select: none;
+          z-index: 2;
+          animation: float-badge 3s ease-in-out infinite;
+        }
+
+        @keyframes float-badge {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-4px);
+          }
+        }
+
         /* ================= CARD TEXT ================= */
         .card h2 {
           font-family: 'Outfit', sans-serif;
-          font-size: 22px;
+          font-size: 20px;
           font-weight: 700;
           color: #0f172a;
           text-align: center;
-          margin: 0 0 8px 0;
+          margin: 0 0 6px 0;
         }
 
         .description {
           font-size: 13px;
           color: #64748b;
           text-align: center;
-          line-height: 1.5;
-          margin: 0 0 24px 0;
+          line-height: 1.4;
+          margin: 0 0 16px 0;
         }
 
         /* ================= FORM ELEMENTS ================= */
@@ -330,7 +394,7 @@ export default function App() {
 
         .input-group {
           position: relative;
-          margin-bottom: 20px;
+          margin-bottom: 12px;
           display: flex;
           align-items: center;
         }
@@ -351,7 +415,7 @@ export default function App() {
 
         .form-input {
           width: 100%;
-          height: 46px;
+          height: 42px;
           padding: 0 16px 0 44px;
           font-size: 14px;
           border-radius: 12px;
@@ -390,7 +454,7 @@ export default function App() {
         /* ================= BUTTONS ================= */
         .btn-primary {
           width: 100%;
-          height: 46px;
+          height: 42px;
           border: none;
           border-radius: 12px;
           background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
@@ -418,7 +482,7 @@ export default function App() {
 
         .btn-secondary {
           width: 100%;
-          height: 46px;
+          height: 42px;
           border: 1px solid #cbd5e1;
           border-radius: 12px;
           background: white;
@@ -551,10 +615,10 @@ export default function App() {
           background: #f0fdf4;
           border: 1px solid #bbf7d0;
           border-radius: 12px;
-          padding: 12px 16px;
+          padding: 10px 14px;
           display: flex;
           gap: 10px;
-          margin-bottom: 20px;
+          margin-bottom: 14px;
           text-align: left;
         }
 
@@ -578,7 +642,7 @@ export default function App() {
           align-items: center;
           justify-content: space-between;
           margin-top: -10px;
-          margin-bottom: 20px;
+          margin-bottom: 14px;
         }
 
         .strength-bars {
@@ -606,12 +670,12 @@ export default function App() {
         .requirements-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 8px 16px;
+          gap: 6px 12px;
           background: #f8fafc;
           border: 1px solid #e2e8f0;
           border-radius: 12px;
-          padding: 14px;
-          margin-bottom: 20px;
+          padding: 10px 12px;
+          margin-bottom: 14px;
           text-align: left;
         }
 
@@ -916,9 +980,14 @@ export default function App() {
               
               <div className="logo">
                 <svg className="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 6.00012C11.19 4.30012 9.09 3.00012 6.5 3.00012C4.02 3.00012 1.83 4.19012 0.5 6.00012V19.5001C1.83 17.6901 4.02 16.5001 6.5 16.5001C9.09 16.5001 11.19 17.8001 12 19.5001M12 6.00012C12.81 4.30012 14.91 3.00012 17.5 3.00012C19.98 3.00012 22.17 4.19012 23.5 6.00012V19.5001C22.17 17.6901 19.98 16.5001 17.5 16.5001C14.91 16.5001 12.81 17.8001 12 19.5001M12 6.00012V19.5001" stroke="url(#logo-grad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 3H8C10.2091 3 12 4.79086 12 7V21C9 18 5 18 2 18V3Z" fill="url(#logo-grad-1)"/>
+                  <path d="M22 3H16C13.7909 3 12 4.79086 12 7V21C15 18 19 18 22 18V3Z" fill="url(#logo-grad-2)"/>
                   <defs>
-                    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient id="logo-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#4f46e5" />
+                      <stop offset="100%" stopColor="#6366f1" />
+                    </linearGradient>
+                    <linearGradient id="logo-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#6366f1" />
                       <stop offset="100%" stopColor="#a855f7" />
                     </linearGradient>
@@ -928,28 +997,10 @@ export default function App() {
               </div>
 
               <div className="illustration">
-                <svg className="illustration-svg" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="85" r="45" fill="#f5f3ff" />
-                  <circle cx="100" cy="85" r="35" fill="#ede9fe" />
-                  <path d="M75 80V55C75 41.19 86.19 30 100 30C113.81 30 125 41.19 125 55V80" stroke="#818cf8" strokeWidth="8" strokeLinecap="round" />
-                  <rect x="60" y="70" width="80" height="65" rx="16" fill="url(#lock-grad)" filter="url(#drop-shadow)" />
-                  <circle cx="100" cy="95" r="6" fill="#ffffff" />
-                  <path d="M97 99L103 99L105 112L95 112Z" fill="#ffffff" />
-                  <circle cx="145" cy="50" r="16" fill="#6366f1" filter="url(#badge-shadow)" />
-                  <text x="145" y="56" fill="#ffffff" fontSize="18" fontWeight="bold" textAnchor="middle">?</text>
-                  <defs>
-                    <linearGradient id="lock-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#818cf8" />
-                      <stop offset="100%" stopColor="#4f46e5" />
-                    </linearGradient>
-                    <filter id="drop-shadow" x="50" y="65" width="100" height="85" filterUnits="userSpaceOnUse">
-                      <feDropShadow dx="0" dy="6" stdDeviation="6" floodColor="#4f46e5" floodOpacity="0.25" />
-                    </filter>
-                    <filter id="badge-shadow" x="125" y="32" width="40" height="40" filterUnits="userSpaceOnUse">
-                      <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#6366f1" floodOpacity="0.3" />
-                    </filter>
-                  </defs>
-                </svg>
+                <div className="illustration-glow-outer"></div>
+                <div className="illustration-glow-inner"></div>
+                <img className="illustration-img" src="/lock-icon.png" alt="Forgot Password Lock" />
+                <div className="question-badge">?</div>
               </div>
 
               <h2>Forgot Password?</h2>
@@ -1007,31 +1058,8 @@ export default function App() {
             <div className="card-content card-content-check-email">
               
               <div className="illustration">
-                <svg className="illustration-svg" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="85" r="45" fill="#f3f0ff" />
-                  <rect x="52" y="62" width="96" height="60" rx="8" fill="#e2e8f0" />
-                  <g transform="translate(0, -5)">
-                    <rect x="65" y="40" width="70" height="55" rx="6" fill="#ffffff" filter="url(#doc-shadow)" />
-                    <rect x="75" y="52" width="50" height="4" rx="2" fill="#e2e8f0" />
-                    <rect x="75" y="62" width="40" height="4" rx="2" fill="#e2e8f0" />
-                    <rect x="75" y="72" width="30" height="4" rx="2" fill="#e2e8f0" />
-                    <circle cx="100" cy="78" r="14" fill="#22c55e" />
-                    <path d="M94 78L98 82L106 74" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </g>
-                  <path d="M50 65H150V115C150 119.42 146.42 123 142 123H58C53.58 123 50 119.42 50 115V65Z" fill="#ffffff" stroke="#c7d2fe" strokeWidth="2" />
-                  <path d="M50 65L93 94C97.3 96.9 102.7 96.9 107 94L150 65" fill="#f8fafc" stroke="#c7d2fe" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M50 123L92 92" stroke="#cbd5e1" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M150 123L108 92" stroke="#cbd5e1" strokeWidth="2" strokeLinecap="round" />
-                  <g transform="translate(150, 30) rotate(-15)">
-                    <path d="M0 8L22 0L15 16L11 11L0 8Z" fill="#a855f7" />
-                    <path d="M11 11L15 16L22 0L11 11Z" fill="#818cf8" />
-                  </g>
-                  <defs>
-                    <filter id="doc-shadow" x="59" y="36" width="82" height="67" filterUnits="userSpaceOnUse">
-                      <feDropShadow dx="0" dy="4" stdDeviation="3" floodColor="#000000" floodOpacity="0.08" />
-                    </filter>
-                  </defs>
-                </svg>
+                <div className="illustration-glow-outer" style={{ background: "#f3f0ff" }}></div>
+                <img className="illustration-img" src="/envelope-icon.png" alt="Check Your Email" />
               </div>
 
               <h2>Check Your Email</h2>
@@ -1102,11 +1130,11 @@ export default function App() {
                 {/* Mailbox */}
                 <g transform="translate(272, 60)">
                   <rect x="18" y="22" width="4" height="20" fill="#94a3b8" />
-                  <path d="M5 12C5 5.37 10.37 0 17 0H35V26H17C10.37 26 5 20.63 5 12Z" fill="#3b82f6" />
-                  <path d="M9 12C9 7.58 12.58 4 17 4H31V22H17C12.58 22 9 18.42 9 12Z" fill="#2563eb" />
+                  <path d="M5 12C5 5.37 10.37 0 17 0H35V26H17C10.37 26 5 20.63 5 12Z" fill="#6366f1" />
+                  <path d="M9 12C9 7.58 12.58 4 17 4H31V22H17C12.58 22 9 18.42 9 12Z" fill="#4f46e5" />
                   <rect x="28" y="10" width="10" height="4" fill="#ef4444" transform="rotate(-60 28 10)" />
                   <circle cx="34" cy="2" r="2" fill="#ef4444" />
-                  <path d="M5 12V26H0V12H5Z" fill="#1e3a8a" />
+                  <path d="M5 12V26H0V12H5Z" fill="#2d1f85" />
                   <rect x="-4" y="16" width="10" height="7" rx="1" fill="#ffffff" transform="rotate(-15 -4 16)" />
                 </g>
               </svg>
@@ -1125,30 +1153,9 @@ export default function App() {
             <div className="card-content">
               
               <div className="illustration">
-                <svg className="illustration-svg" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="75" r="45" fill="#f5f3ff" />
-                  <circle cx="100" cy="75" r="35" fill="#ede9fe" />
-                  <path d="M100 25C125 28 138 35 138 65C138 100 115 120 100 128C85 120 62 100 62 65C62 35 75 28 100 25Z" fill="url(#shield-grad)" filter="url(#shield-shadow)" />
-                  <path d="M100 32C120 34.5 130 40 130 65C130 93 112 110 100 118C88 110 70 93 70 65C70 40 80 34.5 100 32Z" stroke="#818cf8" strokeWidth="2" strokeDasharray="4 2" />
-                  <path d="M90 70V58C90 52.48 94.48 48 100 48C105.52 48 110 52.48 110 58V70" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" />
-                  <rect x="82" y="68" width="36" height="26" rx="6" fill="#ffffff" />
-                  <circle cx="100" cy="78" r="3" fill="#4f46e5" />
-                  <path d="M99 80H101L102 87H98L99 80Z" fill="#4f46e5" />
-                  <circle cx="132" cy="105" r="14" fill="#22c55e" filter="url(#shield-badge-shadow)" />
-                  <path d="M126 105L130 109L138 99" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                  <defs>
-                    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#818cf8" />
-                      <stop offset="100%" stopColor="#4f46e5" />
-                    </linearGradient>
-                    <filter id="shield-shadow" x="52" y="19" width="96" height="121" filterUnits="userSpaceOnUse">
-                      <feDropShadow dx="0" dy="6" stdDeviation="6" floodColor="#4f46e5" floodOpacity="0.25" />
-                    </filter>
-                    <filter id="shield-badge-shadow" x="115" y="88" width="34" height="34" filterUnits="userSpaceOnUse">
-                      <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#22c55e" floodOpacity="0.3" />
-                    </filter>
-                  </defs>
-                </svg>
+                <div className="illustration-glow-outer"></div>
+                <div className="illustration-glow-inner"></div>
+                <img className="illustration-img" src="/shield-icon.png" alt="Create New Password" />
               </div>
 
               <h2>Create New Password</h2>
