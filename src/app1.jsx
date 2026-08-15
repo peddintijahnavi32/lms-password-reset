@@ -692,11 +692,11 @@ export default function App() {
           width: 14px;
           height: 14px;
           border-radius: 50%;
-          background: #f1f5f9;
+          background: #e2e8f0;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #16a34a;
+          color: #94a3b8;
           flex-shrink: 0;
           transition: all 0.2s;
         }
@@ -711,8 +711,8 @@ export default function App() {
         }
 
         .req-item.valid .req-icon {
-          background: #dcfce7;
-          color: #16a34a;
+          background: #22c55e;
+          color: white;
         }
 
         /* ================= BOTTOM NOTIFICATION CARDS ================= */
@@ -755,14 +755,6 @@ export default function App() {
         .bg-redirect {
           background: #dbeafe;
           color: #1d4ed8;
-        }
-
-        .bottom-card-icon-img {
-          width: 44px;
-          height: 44px;
-          object-fit: contain;
-          display: block;
-          border-radius: 50%;
         }
 
         .success-check-svg {
@@ -1205,6 +1197,7 @@ export default function App() {
                 <div className="strength-bars">
                   <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 1 ? strengthColor : "#e2e8f0" }}></span>
                   <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 3 ? strengthColor : "#e2e8f0" }}></span>
+                  <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 4 ? strengthColor : "#e2e8f0" }}></span>
                   <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 5 ? strengthColor : "#e2e8f0" }}></span>
                 </div>
                 <span className="strength-label" style={{ color: strengthColor }}>{strengthText}</span>
@@ -1306,10 +1299,11 @@ export default function App() {
           
           {/* Success Box */}
           <div className={`bottom-card success-card ${isRedirecting ? "pulse-border" : ""}`}>
-            <div className="bottom-card-icon-container">
-              <img src="./public/celebration-icon.png" alt="Celebration" />
-             
-                          </div>
+            <div className="bottom-card-icon-container bg-success">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="success-check-svg">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
             <div className="bottom-card-text">
               <h4>Password Reset Successful!</h4>
               <p>
@@ -1329,12 +1323,10 @@ export default function App() {
 
           {/* Redirect Timer Box */}
           <div className={`bottom-card redirect-card ${isRedirecting ? "active-redirect" : ""}`}>
-            <div className="bottom-card-icon-container">
-              <img
-                className="bottom-card-icon-img"
-                src="/lock-icon.png"
-                alt="Locked"
-              />
+            <div className="bottom-card-icon-container bg-redirect">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="redirect-lock-svg" style={{ width: "20px", height: "20px" }}>
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+              </svg>
             </div>
             <div className="bottom-card-text">
               <h4>Redirecting to Login...</h4>
