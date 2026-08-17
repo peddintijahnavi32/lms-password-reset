@@ -113,7 +113,7 @@ export default function App() {
         body {
           margin: 0;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-          background-color: #f1f3f9;
+          background-color: #eaf5ff;
           color: #1e293b;
           min-height: 100vh;
         }
@@ -122,7 +122,7 @@ export default function App() {
           width: 100%;
           max-width: 1200px;
           margin: 0 auto;
-          padding: 40px 24px 60px;
+          padding: 8px 4px 16px;
         }
 
         /* ================= TITLE ================= */
@@ -150,10 +150,10 @@ export default function App() {
 
         /* ================= CONTAINER ================= */
         .flow-container {
-          background: #f8fafc;
-          border-radius: 24px;
-          border: 1px solid #e2e8f0;
-          padding: 32px;
+          background: #f4f5ff;
+          border-radius: 0;
+          border: 1px solid #edf0fb;
+          padding: 12px 16px 16px;
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
@@ -162,9 +162,9 @@ export default function App() {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 32px;
-          margin-bottom: 32px;
-          border-bottom: 1px solid #e2e8f0;
-          padding-bottom: 24px;
+          margin-bottom: 12px;
+          border-bottom: 0;
+          padding-bottom: 0;
         }
 
         .step {
@@ -224,7 +224,7 @@ export default function App() {
           flex-direction: column;
           justify-content: space-between;
           position: relative;
-          min-height: 460px;
+          min-height: 432px;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -234,13 +234,13 @@ export default function App() {
         }
 
         .card-content {
-          padding: 24px 24px 18px;
+          padding: 18px 20px 14px;
           flex-grow: 1;
         }
 
         /* Card 2 specific styling for full bleed landscape */
         .card-check-email {
-          background: linear-gradient(180deg, #ffffff 0%, #f3f0ff 65%, #dcd6ff 100%) !important;
+          background: linear-gradient(180deg, #ffffff 0%, #f7fbff 66%, #e2f0ff 100%) !important;
         }
 
         .card-content-check-email {
@@ -256,7 +256,7 @@ export default function App() {
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 90px;
+          height: 105px;
           pointer-events: none;
           z-index: 1;
         }
@@ -284,7 +284,7 @@ export default function App() {
 
         /* ================= ILLUSTRATIONS ================= */
         .illustration {
-          height: 110px;
+          height: 118px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -301,7 +301,7 @@ export default function App() {
         .illustration-img {
           position: relative;
           z-index: 1;
-          max-height: 100px;
+          max-height: 112px;
           max-width: 100%;
           object-fit: contain;
           mix-blend-mode: multiply;
@@ -604,10 +604,17 @@ export default function App() {
         }
 
         .back-to-login-link-card2 {
-          margin-top: auto !important;
-          padding-bottom: 8px;
+          margin-top: 16px !important;
+          padding-bottom: 0;
           z-index: 3;
           position: relative;
+        }
+
+        .back-to-login-link-top {
+          justify-content: flex-start;
+          margin: 0;
+          font-size: 12px;
+          color: #4338ca;
         }
 
         /* ================= ALERT BOX ================= */
@@ -671,8 +678,8 @@ export default function App() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 6px 12px;
-          background: #f8fafc;
-          border: 1px solid #e2e8f0;
+          background: #f0fdf4;
+          border: 1px solid #bbf7d0;
           border-radius: 12px;
           padding: 10px 12px;
           margin-bottom: 14px;
@@ -765,6 +772,13 @@ export default function App() {
         .redirect-lock-svg {
           width: 20px;
           height: 20px;
+        }
+
+        .notification-icon-image {
+          width: 32px;
+          height: 32px;
+          object-fit: contain;
+          mix-blend-mode: multiply;
         }
 
         .bottom-card-text {
@@ -1056,9 +1070,8 @@ export default function App() {
           {/* CARD 2: Check Your Email with Full-Bleed Landscape */}
           <div className="card card-check-email">
             <div className="card-content card-content-check-email">
-              
               <div className="illustration">
-                <div className="illustration-glow-outer" style={{ background: "#f3f0ff" }}></div>
+                <div className="illustration-glow-outer" style={{ background: "#e9f3ff" }}></div>
                 <img className="illustration-img" src="/envelope-icon.png" alt="Check Your Email" />
               </div>
 
@@ -1104,37 +1117,36 @@ export default function App() {
                 </svg>
                 Back to Login
               </div>
-
             </div>
 
             {/* Custom Landscape Background Graphic covering the bottom */}
             <div className="card2-landscape-bg">
               <svg viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ width: '100%', height: '100%', display: 'block' }}>
-                <path d="M-20 120V75C30 55 70 80 120 65C170 50 210 75 260 60C310 45 330 55 350 65V120H-20Z" fill="#ede9fe" opacity="0.6"/>
-                <path d="M-20 120V90C40 70 90 90 140 75C190 60 240 80 295 65C320 58 335 65 350 70V120H-20Z" fill="#e0dbff" opacity="0.8"/>
-                <path d="M-20 120V100C30 90 60 105 110 90C160 75 200 90 250 80C300 70 320 80 350 85V120H-20Z" fill="#cbbfff" />
+                <path d="M-20 120V75C30 55 70 80 120 65C170 50 210 75 260 60C310 45 330 55 350 65V120H-20Z" fill="#dbeafe" opacity="0.6"/>
+                <path d="M-20 120V90C40 70 90 90 140 75C190 60 240 80 295 65C320 58 335 65 350 70V120H-20Z" fill="#bfdbfe" opacity="0.8"/>
+                <path d="M-20 120V100C30 90 60 105 110 90C160 75 200 90 250 80C300 70 320 80 350 85V120H-20Z" fill="#93c5fd" />
                 
                 {/* Left foliage */}
                 <g transform="translate(10, 65)">
-                  <path d="M10 50C12 35 5 25 -2 20C-5 25 -3 35 10 50Z" fill="#818cf8" opacity="0.7"/>
-                  <path d="M22 50C25 30 15 20 7 15C2 22 9 35 22 50Z" fill="#6366f1" opacity="0.5"/>
-                  <path d="M35 50C37 25 25 15 15 10C10 18 20 35 35 50Z" fill="#a855f7" opacity="0.4"/>
+                  <path d="M10 50C12 35 5 25 -2 20C-5 25 -3 35 10 50Z" fill="#60a5fa" opacity="0.7"/>
+                  <path d="M22 50C25 30 15 20 7 15C2 22 9 35 22 50Z" fill="#3b82f6" opacity="0.5"/>
+                  <path d="M35 50C37 25 25 15 15 10C10 18 20 35 35 50Z" fill="#2563eb" opacity="0.4"/>
                 </g>
                 
                 {/* Right foliage */}
                 <g transform="translate(255, 60)">
-                  <path d="M10 55C5 40 15 30 25 25C28 30 22 43 10 55Z" fill="#818cf8" opacity="0.6"/>
-                  <path d="M22 55C15 37 25 27 35 20C39 27 32 43 22 55Z" fill="#6366f1" opacity="0.4"/>
+                  <path d="M10 55C5 40 15 30 25 25C28 30 22 43 10 55Z" fill="#60a5fa" opacity="0.6"/>
+                  <path d="M22 55C15 37 25 27 35 20C39 27 32 43 22 55Z" fill="#3b82f6" opacity="0.4"/>
                 </g>
 
                 {/* Mailbox */}
                 <g transform="translate(272, 60)">
                   <rect x="18" y="22" width="4" height="20" fill="#94a3b8" />
-                  <path d="M5 12C5 5.37 10.37 0 17 0H35V26H17C10.37 26 5 20.63 5 12Z" fill="#6366f1" />
-                  <path d="M9 12C9 7.58 12.58 4 17 4H31V22H17C12.58 22 9 18.42 9 12Z" fill="#4f46e5" />
+                  <path d="M5 12C5 5.37 10.37 0 17 0H35V26H17C10.37 26 5 20.63 5 12Z" fill="#3b82f6" />
+                  <path d="M9 12C9 7.58 12.58 4 17 4H31V22H17C12.58 22 9 18.42 9 12Z" fill="#2563eb" />
                   <rect x="28" y="10" width="10" height="4" fill="#ef4444" transform="rotate(-60 28 10)" />
                   <circle cx="34" cy="2" r="2" fill="#ef4444" />
-                  <path d="M5 12V26H0V12H5Z" fill="#2d1f85" />
+                  <path d="M5 12V26H0V12H5Z" fill="#1e3a8a" />
                   <rect x="-4" y="16" width="10" height="7" rx="1" fill="#ffffff" transform="rotate(-15 -4 16)" />
                 </g>
               </svg>
@@ -1195,10 +1207,10 @@ export default function App() {
 
               <div className="strength-bar-container">
                 <div className="strength-bars">
-                  <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 1 ? strengthColor : "#e2e8f0" }}></span>
-                  <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 3 ? strengthColor : "#e2e8f0" }}></span>
-                  <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 4 ? strengthColor : "#e2e8f0" }}></span>
-                  <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 5 ? strengthColor : "#e2e8f0" }}></span>
+                  <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 1 ? "#2563eb" : "#e2e8f0" }}></span>
+                  <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 2 ? "#2563eb" : "#e2e8f0" }}></span>
+                  <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 3 ? "#2563eb" : "#e2e8f0" }}></span>
+                  <span className="bar" style={{ backgroundColor: passedRequirementsCount >= 4 ? "#2563eb" : "#e2e8f0" }}></span>
                 </div>
                 <span className="strength-label" style={{ color: strengthColor }}>{strengthText}</span>
               </div>
@@ -1284,8 +1296,8 @@ export default function App() {
               </button>
 
             </div>
-            <div className="card-footer">
-              <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="card-footer" style={{ color: "#16a34a" }}>
+              <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: "#16a34a" }}>
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
               Your security is our priority
@@ -1312,7 +1324,8 @@ export default function App() {
                 You can now log in using your new password.
               </p>
             </div>
-            <div className="celebrate-emoji">🎉</div>
+            
+            <img className="notification-icon-image" src="/Screenshot_2026-08-14_220231.png" alt="Celebration" />
             <button className="btn-circle-arrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -1324,9 +1337,7 @@ export default function App() {
           {/* Redirect Timer Box */}
           <div className={`bottom-card redirect-card ${isRedirecting ? "active-redirect" : ""}`}>
             <div className="bottom-card-icon-container bg-redirect">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="redirect-lock-svg" style={{ width: "20px", height: "20px" }}>
-                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
-              </svg>
+              <img className="notification-icon-image" src="/Screenshot_2026-08-14_220239.png" alt="Secure redirect" />
             </div>
             <div className="bottom-card-text">
               <h4>Redirecting to Login...</h4>

@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-export default function App() {
+function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -795,9 +796,12 @@ export default function App() {
           line-height: 1.4;
         }
 
-        .celebrate-emoji {
-          font-size: 24px;
+        .celebrate-icon {
+          width: 32px;
+          height: 32px;
+          flex-shrink: 0;
           margin-right: 8px;
+          object-fit: contain;
         }
 
         .btn-circle-arrow {
@@ -1306,10 +1310,11 @@ export default function App() {
           
           {/* Success Box */}
           <div className={`bottom-card success-card ${isRedirecting ? "pulse-border" : ""}`}>
-            <div className="bottom-card-icon-container">
-              <img src="./public/celebration-icon.png" alt="Celebration" />
-             
-                          </div>
+            <div className="bottom-card-icon-container bg-success">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="success-check-svg">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
             <div className="bottom-card-text">
               <h4>Password Reset Successful!</h4>
               <p>
@@ -1318,7 +1323,11 @@ export default function App() {
                 You can now log in using your new password.
               </p>
             </div>
-            <div className="celebrate-emoji">🎉</div>
+            <img
+              className="celebrate-icon"
+              src="/celebration-icon.png"
+              alt="Celebration"
+            />
             <button className="btn-circle-arrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -1383,3 +1392,11 @@ export default function App() {
     </div>
   );
 }
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+
+export default App;
